@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+ 
+<head>
+    <link rel="stylesheet" href="styleess.css">
+    <link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href=
+"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <title> Weather App</title>
+</head>
+
+
+
+ 
+<body>
+    <div class="container">
+        <div class="weather-card">
+            <h1 style="color: green;">
+                Weather App
+            </h1>
+            
+            <input type="text" id="city-input"
+                   placeholder="Enter city name">
+            <button id="city-input-btn"
+                    onclick="weatherFn($('#city-input').val())">
+                    Get Weather
+            </button>
+            <div id="weather-info"
+                 class="animate__animated animate__fadeIn">
+                <h3 id="city-name"></h3>
+                <p id="date"></p>
+                <img id="weather icon" src="" alt="Weather Icon">
+                <p id="temperature"></p>
+                <p id="description"></p>
+                <p id="wind-speed"></p>
+            </div>
+        </div>
+    </div>
+    <script src=
+"https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <script src=
+"https://momentjs.com/downloads/moment.min.js">
+    </script>
+    
+
+    
+   
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+      <p>Sunny Weather
+        Sunny weather occurs whenever there is no precipitation and few clouds present to cover the sun.  Sunlight provides the energy that plants need to undergo photosynthesis, the process by which they make their own food.</p>
+    </div>
+    
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+      <p>Rain, Storms and Hurricanes
+        Rain, which is also known as precipitation, forms in the clouds when water vapor, a gas, condensates and turns into large droplets of water.  </p>
+    </div>
+    
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+      <p>Snow and Blizzards
+        A snowstorm is a weather event characterized by wintery precipitation such as snow, sleet, or freezing rain. Snowstorms typically occur whenever temperatures are below freezing. </p>
+    </div>
+    
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+    <style>
+        .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+    
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+    
+    .accordion:after {
+      content: '\002B';
+      color: #777;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+    
+    .active:after {
+      content: "\2212";
+    }
+    
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+</style>
+
+
+        <h2> Validation</h2>
+        <br>
+        <br>
+        <br>
+
+        <p>Please input a number between 1 and 10:</p>
+        
+        <input id="numb">
+        
+        <button type="button" onclick="myFunction()">Submit</button>
+        
+        <p id="demo"></p>
+        
+        <script>
+        function myFunction() {
+          // Get the value of the input field with id="numb"
+          let x = document.getElementById("numb").value;
+          // If x is Not a Number or less than one or greater than 10
+          let text;
+          if (isNaN(x) || x < 1 || x > 10) {
+            text = "Input not valid";
+          } else {
+            text = "Input OK";
+          }
+          document.getElementById("demo").innerHTML = text;
+        }
+        </script>
+
+    <script src="scripts.js"></script>
+</body>
+ 
+</html>
+
